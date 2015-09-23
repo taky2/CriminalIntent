@@ -5,9 +5,7 @@ import java.util.Date;
 import java.util.UUID;
 import android.text.format.DateFormat;
 
-/**
- * Created by kyma on 9/22/15.
- */
+
 public class Crime {
 
     private UUID mId;
@@ -22,7 +20,7 @@ public class Crime {
         mId = UUID.randomUUID();
         mDate = new Date();
 
-        mFormattedDate =  new SimpleDateFormat("MMM-d-yyyy");
+
 
     }
 
