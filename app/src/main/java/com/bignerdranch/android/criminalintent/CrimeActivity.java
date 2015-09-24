@@ -1,18 +1,16 @@
 package com.bignerdranch.android.criminalintent;
 
-import android.app.FragmentManager;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.Fragment;
 
-public class CrimeActivity extends FragmentActivity {
+public class CrimeActivity extends SingleFragmentActivity {
 
+    /** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     * CODE BELOW NOW IMPLEMENTED IN SINGLEFRAGMENTACTIVITY SUPERCLASS
+     *
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crime);
+        setContentView(R.layout.activity_fragment);
 
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         android.support.v4.app.Fragment fragment = fm.findFragmentById(R.id.fragment_container);
@@ -21,6 +19,12 @@ public class CrimeActivity extends FragmentActivity {
             fragment = new CrimeFragment();
             fm.beginTransaction().add(R.id.fragment_container, fragment).commit();
         }
+    }
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+    @Override
+    protected Fragment createFragment() {
+        return new CrimeFragment();
     }
 
 }
