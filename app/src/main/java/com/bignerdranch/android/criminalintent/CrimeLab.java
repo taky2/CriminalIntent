@@ -9,16 +9,11 @@ import java.util.UUID;
 public class CrimeLab {
 
     private static CrimeLab sCrimeLab;
+
     public List<Crime> mCrimes;
 
 
-    public static CrimeLab get(Context context){
-        if (sCrimeLab == null){
-            sCrimeLab = new CrimeLab(context);
-        }
-    return sCrimeLab;
-    }
-
+    // CONSTRUCTOR
     private CrimeLab(Context context){
         mCrimes = new ArrayList<>();
         for(int i = 0; i<100; i++){
@@ -28,6 +23,9 @@ public class CrimeLab {
             mCrimes.add(crime);
         }
     }
+
+    /*******************************/
+    /***** GETTERs and SETTERs *****/
 
     public List<Crime> getCrimes(){
         return mCrimes;
@@ -42,4 +40,10 @@ public class CrimeLab {
         return null;
     }
 
+    public static CrimeLab get(Context context){
+        if (sCrimeLab == null){
+            sCrimeLab = new CrimeLab(context);
+        }
+        return sCrimeLab;
+    }
 }
